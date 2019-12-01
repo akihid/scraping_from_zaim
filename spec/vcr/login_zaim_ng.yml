@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://auth.zaim.net/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML,
+        like Gecko) Version/9.0.2 Safari/601.3.9
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Nov 2019 18:49:57 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Set-Cookie:
+      - z=d862e916193b1763cbd3738ac0f8a3cf; expires=Tue, 03-Dec-2019 06:49:57 GMT;
+        Max-Age=216000; path=/; domain=.zaim.net; HttpOnly
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA7Va+28cxR3/2ZH6PwxbwtlS9vZu723fnRVIDJGIYtFEahtF1tzu3N3EuzvLPnw+HlLO5hEIUkCFtFAhSiEoUIHaQmkDKfwxm4vj/6Lfmdnde+Uc222lyLc7O/P9fuf7ns+k/sSZC89c/M36WdQNbKv5ixP19Jdgk7/bJMDI6GLPJ0EjEwZttZpJx7tB4KrkxZBuNTK/Vi+dVp9htosD2rJIBhnMCYgDi86dbRCzQ04ZXY/ZpJEfrXcwvCvYdS2i0iB0iK/Ci5Iu5Z9UajaKxVK1lCtX8gpnbVFnE3nESlYGLDS6KgV+Cup6pN1QNEly9CHrOp2ptX6XeYERBmhiYRtv8fcs/FGQlm5UCrpFSc+FVWMC9qgZdBsmgVVEFS+nqEMDii3VN7AFu83mTtkwZIf2+AjenhoJfeKJCRiU13CYkDaggUWaz7MOddAyugRTfPQK+i2mdl2T3xJ1iH1nNM3G24bpZFuMBX7gYZe/GMzW0gGtkC1kK5rh+6OxLAiYhZGM0GrGD/oW8buEBMJSqbrHP0hFZwQdj3ID+imVCRvNW2TjgHigJrEKh0FXCHD0pVzsI61SjdAPmD3LThntW0FB3wXPDMh2wLeY+hVXm8XNwZev5kuVYr6Yz+fLitasa904ZFrM7INIC3WTbiHDwr4PlJir+i42iKfATPgwNSHj4K0W9pD8UV8CE2eaEyTiGSrnQjz+caHeCoOAOVLYjHyBuBMck+kB63R4NJo4wKp8aWQMZlnY9dNh7HV4dGdj7h7xXeb4dIuo6UzOb6EOW3ASBjxOVJA5Axvi4/+rGXVN7kTsEHLPxHZaHnbMTOx9PP34y5rGtZV1SKAJrSzUqd1B2IIN8UiByYR2uvBWrGaQ7xmNjAYTNIgKmzncmkzNl3M8Q2SQDOcMvMekRibMSDdXexBVLjeANCM3g4ZB1uR1zOqJDRIlQl6Tek/MPE/R9dAa23cyG6yTPFqkDcEpTGLRZGorcFTquGGgmpC0qSUnLNRxnBUTdYloS3XGE4+v+bTjhO5qGzJ0o0da4KTcR+sJbcU2KfiCSOgqNk3VoJ5hEe7LtImi3S+i3XvRzvfwd+/DH/ff+btUBlcM9xrNokJW/pyKq2AjAA9T5JfHCAmMJkTha8H7LGZsqiwMIEWNZPk62vlrtPN5tPvtwfzncY63mU01ZGMnxJY/RwbsOCx0DGJDrYv1cf/fP0eD16LBjWjwybQMYwo4tABzOENO34w5RoO39998Lxp8c/+nn4fXvxz+a3rvdS20Rk76KF/l28agR/BsyF3cVGO+D46rWh01r6OWB/nH8EK7NYoEMX/ks8pojoJoQGzfYC4RTzKtckeEsBUpaYsZuBVa2OtnmdfRnk7Jg3ZAV80Zx0jN0oVmQtJ3PeY2lNCzQBsiQ3GmclBUSaX53IXzZ+MsxQ0iPXKCvHZYUqIKT9Mas2ri1qJqC0ax7uMMMatcj/WQKCoiwiZsMGEFhVvBNtUSarFt7jzjFoIhVWxWRH29q0tVxM1DjwZd1Gehh4gNmWEsYYNUMPfR6YvTpI5wCZ7m2syzkYw8aLEU5DHoVBQ+Cg2RLHP8RYXGir7EvckCnZoNhWtMaGNNTIWOsstg2GU+dFLYMIgbqEmHqYgOE+zInU8U5IZiUt+1cH/ZYQ5ZgU8ix8UVuktNk0DfJxu0DUlbQVvYCkG29Qu/ushL8/wV3Acvb1xkm8S5cnmT9K+ka0uGXsnp1TIp51q5drFWIgautEwjb+j5Sq1czRvtWjuPSckw9XK5XMN6q4Zz8LeSLxfKtWIZ18o4p1fyxKjlzIpZ0o0cKZJasVKrFFolUijkcbtt1MolWFuuFqqlkm62itVcHhcJMXNSd0IyPVeqFfVqXq+AvsKAQemChiuADbJ2W7QeIlmP4lUYRe14LHShpYP+3CMmKM7CLWIhsJG0yVnuCqnp4hAviOYbTKuK2UpTzELMQ+fOgDdzCtI4scXjZbXULtISQq/c8FcuC48DvY67CE82wENBYFiDdJkFLU1DkaygvEBd9Lm7gvAd6kOjSEwELTAv54rsZGwT4ttoKHkFQctrEacDbbiS16vjrdvI/eKtJrpoKMnTSHuiKRuLqDEdzqpuHZq6HvPMdFfztJdMPJ7q3JjNPO2JDDqmigltJqznKlIm44THSFnJwmndPCaKpLVt3KEGPzJsdLHfBcGTDHA++fAcjB8iKKfJBSJGH0FPhMihCXYYg354g5pjoj0rxs6ZRyUyLZKkcyx5yLZLPTg5M2cDjEpmhDubfj8Dnw8taBuii7cJk/tdi0ePsOOU0PSeE1pH23VKbv6+E8JH2Tnjre2GEDGNTFGS0nwzHTFxoTBD2+6PfOs4vHHHI9CPPDLLzeEKySuJjvkc3VELpIWyVyeOuZGE7erYnhtyG/N7ZUhkvF+HOtxhAUpJiJao5QHekXZbCauZY8FEGx63yrMngjMMOcChi7cIwiJvQ/lYla0XbGisUvlhy6a8cZbZJVYfHGUQP85YHfHjh9AlQEngQy3e9CdZPl6d1HvRZfDgGCXzI/cQ3FZpR9CmxDJ9iMbYT4o1vVIqmqZRKRR1AxdxCZdaZqnQLlXb7ZxutnPFvN4umScLp3n+ys7z85OVZya/U3NmSLhxMhqnralwmfo6IhJPnyAxmZmTpaPROGy4R17kuXZN7L1cKxRq+WquNqf1eExRSFqr0OFmIzzrxqqUvi84XYo/6rlcTi8XCzkIjAP6HI2HdLPuNp/uQ7hRY5M6HSRMjyRycEqUPBGQKGCIt72JY2eSQ3DsuqNTnkU62NICBihYEOMhGy0LO5uZ5kXi2T53XgTgAwq6OBAMhHfz88qROLge3cJGf5bLuvyA1hnsqc/ZZeua24yPDSfiM9t47MTnAX3qLKAwb3Q+F8jMhRfSAwvvFA+gdcizhdT26FThMwOwvMMcJRBAasRzsEQnErMomvRYCa6teiQIPWcDTnQNYS8Ip5P6GvybgC74UGHNdyne8NnJwhlAhwX0wzEeZQrjoc6G5MBxnnHgTgBFisgZcC5MoBItCdz/p0AJjwNFmjI/HMNS9DB98A3ApoIYBhSY5VW8heVoAnld9bWrL4bE66v5bD4PGDDHfK8CdgqeIZYLQPIwlA6NMQPLFHY+PjugMg4wH0tkoDGBNx9IRKK+Iw0qAjRUNCDSBlgdsrpUHS+mseoAGE11uPDkYhvwIN7KLS6hl9GT2ZQ1vxlYXFpBry6tcHg4WQ0YviQ8eaQXx30AXYocNuTnfvng22qRB/zY6R/wZUkgBoeV5v17gwe3v96/9ef9a5892H19+Ke/JZDPAuA0YvVcbMVg2asuHO/jLKjILKg09wc3hre+v3/vo73Pf5KVXMJ6EzDK49Or0gSAau/9Ow+/uLn33WvHJRRnUaUZ7f4+2v1S4H3vRjv/5Djk7sfR7lfy+bjkOThMPJ7TlObeW3eH33w0/OCN4c1bw3sfRIO/DD/5IRrcjgY3H3565+GdPxyXCXYpaPXtaw8/fefBtxN05WA0uAOI3vD2e6Cn4RuvD7+5e1xOPjFCjwZ9pSmdIdr5Mdr5Otq9zRW1+0a089mDW3f33/x4gv4EYjjmbY3/xjGjnX8IE/0u2rl7ZPecqdkpMisRV9jExA4e5eIzNCAp+jxYAd+Ndq6DUaPBTrRz4+G3Xw0/uHl0cpw+YGS+BjAGUBy8DVQADB6+ez3agYc/HkgRQFGoUtmOpV3YrOEXL80GIV3vAgp2CtF1aDv23rp+IDl+NxLTK5wrnN+2Z+mddkyP0cORglvOtF2apbR/68behz88vPb68F0Aot9Dp9fPIXDfaPD+3nd37/94Y0LS4/oWgkbOpyZJjlluaFmqx693ZEqkbQ+ulBPgsAUIDfEkbojYFvHaFustS8hwRd71LOdzOXd7Jb4jWtbFC+Rb5i3/cm1tLc79SVbr9XppSy+uVV0rhMtAuBOkmyTrdt1VcQ/Lp6cty/Qa6Fpc3CE+/HI8C35AhHK+XINGu1Qr1CpPYdtdAbwT7jUasp/dMOCGIRDjcGvd2+CNg99ow50EEYPy1grIiLcYoeUiifc2eKR4iO/B9Jw4BgpN8UoAlcRtPgUQfX8lPqk5Rhadtiz0Alesj14gcJTZIqZoR08sgA00YQRerkQPAv1kUsDqT6gqetZiLWwhH2B4qCIdtNiBv9BsLCH4JrAWdBo6wH5ADR+pKvSjcd+B/b5jyHI7rnLZuQENiHdQnSdUz2lCTV6F8wr8xwNdrxSqlaquFsbKckK3eQKBtR2T9bL8dPc87hMPNWaHXnkFXb6yApOTAo44k8Wll9NVWTf0u4twPAj5dY+/tPIqzBaTMtBTnEIO6aEzANAsLi2tnEg/QU5o0w58zkxImoE5aRMAT/G9MXTR8v9i/AcarI28nSEAAA==
+    http_version: 
+  recorded_at: Sat, 30 Nov 2019 18:49:57 GMT
+- request:
+    method: post
+    uri: https://auth.zaim.net/
+    body:
+      encoding: UTF-8
+      string: _method=POST&data%5B_Token%5D%5Bkey%5D=5c270286e60b0f495eca7bdc1c2179681cf9f1ae5cd26669a2b9a0a2b71636946a96a0271ec90d7d52c0e4e947973b5e331affc96569a6838552db4801a4eed0&data%5BUser%5D%5Bemail%5D=hoge_fuga_ho-999%40yahoo.co.jp&data%5BUser%5D%5Bpassword%5D=hogefuga&data%5BUser%5D%5Bmagiclink_hash%5D=&data%5BUser%5D%5Bmagiclink_token%5D=&data%5BUser%5D%5Bgoogle_id%5D=&data%5BUser%5D%5Bgoogle_token%5D=&data%5BUser%5D%5Bgoogle_expiration_date%5D=&data%5BUser%5D%5Bfacebook_id%5D=&data%5BUser%5D%5Bfacebook_token%5D=&data%5BUser%5D%5Bfacebook_expiration_date%5D=&oauth_token=dummy&agree=1&data%5B_Token%5D%5Bfields%5D=492754ddc7342ca4a5a5bd53f58ff02df0412f5d%253AUser.facebook_expiration_date%257CUser.facebook_id%257CUser.facebook_token%257CUser.google_expiration_date%257CUser.google_id%257CUser.google_token%257CUser.magiclink_hash%257CUser.magiclink_token&data%5B_Token%5D%5Bunlocked%5D=
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML,
+        like Gecko) Version/9.0.2 Safari/601.3.9
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Cookie:
+      - z=d862e916193b1763cbd3738ac0f8a3cf
+      Referer:
+      - https://auth.zaim.net/
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Content-Length:
+      - '888'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '300'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Nov 2019 18:49:58 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Sat, 30 Nov 2019 18:49:58 GMT
+recorded_with: VCR 5.0.0

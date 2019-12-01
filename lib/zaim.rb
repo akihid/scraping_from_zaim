@@ -3,21 +3,23 @@ require 'mechanize'
 require "date"
 require './lib/user'
 
-URL = "https://auth.zaim.net/"
-TARGET_URL = "https://zaim.net/money?month="
+URL = "https://auth.zaim.net/".freeze
+TARGET_URL = "https://zaim.net/money?month=".freeze
+
 
 class Zaim
-  def initialize()
+  def initialize(user)
     @agent = Mechanize.new
     @agent.user_agent_alias = 'Mac Safari'
+    @user = user
   end
 
-  def login(user)
+  def login()
     page = @agent.get(URL)
 
     form = page.form_with(id: 'UserLoginForm')
-    form.field_with(id: 'UserEmail').value = user.mail
-    form.field_with(id: 'UserPassword').value = user.password
+    form.field_with(id: 'UserEmail').value = @user.mail
+    form.field_with(id: 'UserPassword').value = @user.password
 
     logined_page = form.submit
     logined_page_source = logined_page.content.toutf8.to_s
@@ -33,7 +35,7 @@ class Zaim
   end
 
   def get_money_info(month)
-    return false unless login_check()
+    return false unless logined?()
 
     if month.nil?
       puts "\r\n取得したい年月を入力してください(半角英数字6桁)(例:201911)"
@@ -42,7 +44,7 @@ class Zaim
       @month = month
     end
     
-    return false unless yyyymm_check(@month)
+    return false unless month_valid?(@month)
 
     url = TARGET_URL + @month
     page = @agent.get(url)
@@ -50,12 +52,11 @@ class Zaim
   end
 
   def print_money_info()
+    return false unless logined?()
     detail_doc = @doc.css('table.list > tbody.money-list')
     total_doc = @doc.css('table.amount_summary')
-    if detail_doc.empty?
-      puts "\r\n!Err! 該当月のデータは存在しません。"
-      return false
-    end
+
+    return false unless data_empty?(detail_doc)
 
     date_list = detail_doc.css('td.date > a.edit-money').map{|data| data.text() }
     category_list = detail_doc.css('td.category > a.edit-money').map{|data| data.text() }
@@ -101,7 +102,7 @@ class Zaim
     puts title.ljust(6, '　') + value.gsub(/\r\n|\r|\n|\s|\t/, "")
   end
 
-  def login_check()
+  def logined?()
     unless @logined
       puts "\r\n!Err! ログインしてください"
       return false
@@ -109,7 +110,7 @@ class Zaim
     true
   end
 
-  def yyyymm_check(month)
+  def month_valid?(month)
     unless month.length == 6
       puts "\r\n!Err! 6桁で入力してください(例:201911)"
       return false
@@ -130,5 +131,12 @@ class Zaim
     true
   end
 
+  def data_empty?(doc)
+    if doc.empty?
+      puts "\r\n!Err! 該当月のデータは存在しません。"
+      return false
+    end
+    true
+  end
 
 end

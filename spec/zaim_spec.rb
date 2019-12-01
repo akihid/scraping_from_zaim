@@ -1,5 +1,7 @@
 require './lib/user'
 require './lib/zaim'
+require 'spec_helper.rb'
+require 'vcr'
 
 describe 'zaimスクレイピングテスト' do
 
@@ -7,15 +9,20 @@ describe 'zaimスクレイピングテスト' do
     before(:all) do
       @user = User.new("hoge_fuga_ho-1@yahoo.co.jp", "hogefuga")
       @ng_user = User.new("hoge_fuga_ho-999@yahoo.co.jp", "hogefuga")
-      @zaim = Zaim.new()
     end
 
     it 'User情報に誤りがある場合、ログインできない' do
-      expect(@zaim.login(@ng_user)).to eq(false)
+      @zaim = Zaim.new(@ng_user)
+      VCR.use_cassette("login_zaim_ng") do
+        expect(@zaim.login()).to eq(false)
+      end
     end
 
     it 'User情報が正しい場合、ログインできる' do
-      expect(@zaim.login(@user)).to eq(true)
+      @zaim = Zaim.new(@user)
+      VCR.use_cassette("login_zaim_ok") do
+        expect(@zaim.login()).to eq(true)
+      end
     end
   end
 
@@ -23,20 +30,28 @@ describe 'zaimスクレイピングテスト' do
 
     before(:all) do
       @user = User.new("hoge_fuga_ho-1@yahoo.co.jp", "hogefuga")
-      @zaim = Zaim.new()
-      @zaim.login(@user)
+      @zaim = Zaim.new(@user)
+      VCR.use_cassette("login_zaim_ok") do
+        @zaim.login()
+      end
     end
 
     it '入力履歴がない年月を指定した場合、何も表示されない' do 
-      @zaim.get_money_info("201909")
-      expect(@zaim.print_money_info()).to eq(false)
+      VCR.use_cassette("get_money_info_201909") do
+        @zaim.get_money_info("201909")
+        expect(@zaim.print_money_info()).to eq(false)
+      end
     end
 
     it '入力履歴がある年月を指定した場合、表示される' do
-      @zaim.get_money_info("201910")
-      expect(@zaim.print_money_info()).to eq(true)
-      @zaim.get_money_info("201911")
-      expect(@zaim.print_money_info()).to eq(true)
+      VCR.use_cassette("get_money_info_201910") do
+        @zaim.get_money_info("201910")
+        expect(@zaim.print_money_info()).to eq(true)
+      end
+      VCR.use_cassette("get_money_info_201911") do
+        @zaim.get_money_info("201911")
+        expect(@zaim.print_money_info()).to eq(true)
+      end
     end
   end
 
@@ -44,9 +59,13 @@ describe 'zaimスクレイピングテスト' do
 
     before(:all) do
       @user = User.new("hoge_fuga_ho-1@yahoo.co.jp", "hogefuga")
-      @zaim = Zaim.new()
-      @zaim.login(@user)
-      @doc =  @zaim.get_money_info("201911")
+      @zaim = Zaim.new(@user)
+      VCR.use_cassette("login_zaim_ok") do
+        @zaim.login()
+      end
+      VCR.use_cassette("get_money_info_201911") do
+        @doc =  @zaim.get_money_info("201911")
+      end
     end
 
     it '日付が取得できている' do 
@@ -98,20 +117,28 @@ describe 'zaimスクレイピングテスト' do
   context '指定年月チェックのテスト' do
     before(:all) do
       @user = User.new("hoge_fuga_ho-1@yahoo.co.jp", "hogefuga")
-      @zaim = Zaim.new()
-      @zaim.login(@user)
+      @zaim = Zaim.new(@user)
+      VCR.use_cassette("login_zaim_ok") do
+        @zaim.login()
+      end
     end
 
     it '年月にyyyyMM形式以外を指定した場合、エラーとなる(6桁以外）' do
-      expect(@zaim.get_money_info("20191")).to eq(false)
+      VCR.use_cassette("get_money_info_err") do
+        expect(@zaim.get_money_info("20191")).to eq(false)
+      end
     end
 
     it '年月にyyyyMM形式以外を指定した場合、エラーとなる(数値以外）' do
-      expect(@zaim.get_money_info("あいうえおか")).to eq(false)
+      VCR.use_cassette("get_money_info_err") do
+        expect(@zaim.get_money_info("あいうえおか")).to eq(false)
+      end
     end
 
     it '年月にyyyyMM形式以外を指定した場合、エラーとなる(存在しない年月）' do 
-      expect(@zaim.get_money_info("201913")).to eq(false)
+      VCR.use_cassette("get_money_info_err") do
+        expect(@zaim.get_money_info("201913")).to eq(false)
+      end
     end 
   end
 
@@ -119,11 +146,13 @@ describe 'zaimスクレイピングテスト' do
 
     before(:all) do
       @user = User.new("hoge_fuga_ho-1@yahoo.co.jp", "hogefuga")
-      @zaim = Zaim.new()
+      @zaim = Zaim.new(@user)
     end
 
     it 'ログインせずに入力履歴表示処理を行うとエラー' do 
-      expect(@zaim.get_money_info("201911")).to eq(false)
+      VCR.use_cassette("get_money_infon_not_login") do
+        expect(@zaim.get_money_info("201911")).to eq(false)
+      end
     end
   end
 end
