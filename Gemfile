@@ -1,4 +1,4 @@
 source "https://rubygems.org"
-gem "nokogiri"
-gem "mechanize"
-gem 'vcr'
+
+# Specify your gem's dependencies in scraping_from_zaim.gemspec
+gemspec

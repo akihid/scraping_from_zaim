@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "scraping_from_zaim"
+
+ScrapingFromZaim::CLI.start(ARGV)
