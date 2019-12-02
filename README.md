@@ -2,14 +2,17 @@
 
 Web 版 Zaim をスクレイピングして、家計簿の入力履歴を表示するコマンドラインツールの開発
 使用言語Ruby/Rspec
+Bundler version 2.0.1
+ruby 2.6.2
+
 
 ## 開発にかかった時間
 
 約15時間
 - 内訳
-  -- ログイン処理（4時間)
-  -- スクレイピング処理(５時間)
-  -- テスト作成および修正(6時間)
+  - ログイン処理（4時間)
+  - スクレイピング処理(５時間)
+  - テスト作成および修正(6時間)
 
 
 ## 工夫した点
@@ -17,8 +20,8 @@ Web 版 Zaim をスクレイピングして、家計簿の入力履歴を表示�
 ### 1.コマンドラインツールだったのでユーザーが情報を入力できるようにした
 
 ユーザーが引数を入力せずに実行した場合にも、メールアドレス・パスワード・指定年月を入力できるようにした。
-入力された情報に誤りがあり、ログインに失敗した場合、値を表示し処理を終了する。
-指定年月が不正な値だった場合、原因を表示し処理を終了する。
+入力された情報に誤りがあり、ログインに失敗した場合、値を表示し処理を終了する。  
+指定年月が不正な値だった場合、原因を表示し処理を終了する。  
 
 ### 2.UserクラスとZaimクラスに分けた
 
@@ -33,7 +36,7 @@ ljustなどを使用し、入力履歴を表示する際には体裁を整え、
 ## 動作確認方法の説明
 git clone後、bundle install。
 ```
-  git clone git@github.com:akihid/scraping.git
+  git clone https://github.com/akihid/scraping_from_zaim
   cd scraping
   bundle install
 ```
@@ -59,14 +62,10 @@ git clone後、bundle install。
 ```
   bundle exec exe/scraping_from_zaim -m メールアドレス -p パスワード -y 入力履歴を表示する年月
 ```
- 
-実行例
-```
-bundle exec exe/scraping_from_zaim -p gmgjdpgjt -y 201911
-```
+
 
 ## 使用Gem
-- "vcr"(テスト時に通信しないため使用)
-- "nokogiri"(スクレイピング用)
-- "mechanize"(スクレイピング用)
+- "vcr
+- "nokogiri
+- "mechanize
 - "thor"(CLI用)
