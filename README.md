@@ -37,7 +37,7 @@ ljustなどを使用し、入力履歴を表示する際には体裁を整え、
 git clone後、bundle install。
 ```
   git clone https://github.com/akihid/scraping_from_zaim
-  cd scraping
+  cd scraping_from_zaim
   bundle install
 ```
 
