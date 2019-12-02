@@ -1,9 +1,9 @@
 ## 開発内容
 
 Web 版 Zaim をスクレイピングして、家計簿の入力履歴を表示するコマンドラインツールの開発
-使用言語Ruby/Rspec
-Bundler version 2.0.1
-ruby 2.6.2
+- 使用言語Ruby/Rspec
+  - Bundler version 2.0.1
+  - ruby 2.6.2
 
 
 ## 開発にかかった時間
